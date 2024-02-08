@@ -1,7 +1,7 @@
 import React from "react";
 import { Todo } from "./model";
-import { CiEdit } from "react-icons/ci";
-import "./styles.css"
+// import { CiEdit } from "react-icons/ci";
+import "./styles.css";
 type Props = {
   todo: Todo;
   todos: Todo[];
@@ -12,9 +12,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
     <form className="todos__single">
       <span className="todos__single--text">{todo.todo}</span>
       <div>
-        <span className="icon">
-          <CiEdit />
-        </span>
+        <span className="icon"></span>
         <span className="icon"></span>
         <span className="icon"></span>
       </div>
