@@ -2,26 +2,26 @@ const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert-btn");
 const result = document.getElementById("result");
 
-function decimalToBinary(input) {
-  let binary = "";
-  if (input === 0) {
-    binary = "0";
-  }
-  while (input > 0) {
-    input = Math.floor(input / 2);
-    binary = (input % 2) + binary;
-  }
-  result.innerText = binary;
+const decimalToBinary = (input) => {
+if (input === 0) {
+  return "0";
+} else if (input === 1) {
+  return "1";
+} else {
+  return decimalToBinary(Math.floor(input / 2)) + (input % 2);
 }
+};
 
-function checkUserInput() {
+const checkUserInput = () => {
   if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
-    alert(" Please provide a decimal number");
+    alert("Please provide a decimal number");
     return;
   }
-  decimalToBinary(parseInt(numberInput.value));
+
+  result.textContent = decimalToBinary(parseInt(numberInput.value));
   numberInput.value = "";
-}
+};
+
 convertBtn.addEventListener("click", checkUserInput);
 
 numberInput.addEventListener("keydown", (e) => {
