@@ -10,9 +10,11 @@ const decimalToBinary = (input) => {
   }
 };
 const showAnimation = () => {
-  console.log("free")
-  console.log("code")
-  console.log("camp")
+  console.log("free");
+  setTimeout(() => {
+    console.log("Code");
+  }, 1000);
+  console.log("Camp");
 };
 const checkUserInput = () => {
   const inputInt = parseInt(numberInput.value);
